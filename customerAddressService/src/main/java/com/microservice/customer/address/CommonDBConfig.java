@@ -36,19 +36,31 @@ public class CommonDBConfig {
 	@Bean(name="entityManagerFactory")
 	public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource());
+        //sessionFactory.setDataSource(dataSourceMySQL());
+        sessionFactory.setDataSource(dataSourcePostgres());
         sessionFactory.setPackagesToScan("com.microservice.customer.address");
         //sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
 	
-
+	/*
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSourceMySQL() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/address_db?allowPublicKeyRetrieval=true&useSSL=false");
         dataSource.setUsername("root");
+        dataSource.setPassword("admin");
+        return dataSource;
+    }
+    */
+    
+    @Bean
+    public DataSource dataSourcePostgres() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/address_db");
+        dataSource.setUsername("postgres");
         dataSource.setPassword("admin");
         return dataSource;
     }
