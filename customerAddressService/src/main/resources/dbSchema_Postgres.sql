@@ -8,3 +8,7 @@ CREATE TABLE customer_address (
 	state varchar(30),
 	zip varchar(10)
 );
+
+
+insert into customer_address (id, first_name, last_name, address1, address2, city, state, zip) values
+(1,'Neeraj', 'Joshi', 'PJR Enclave', 'Road Number 7', 'Hyderabad','Telangana', '500050');
