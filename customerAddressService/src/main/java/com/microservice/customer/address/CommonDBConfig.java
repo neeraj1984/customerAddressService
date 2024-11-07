@@ -59,7 +59,8 @@ public class CommonDBConfig {
     public DataSource dataSourcePostgres() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/address_db");
+        //dataSource.setUrl("jdbc:postgresql://localhost:5432/address_db");
+        dataSource.setUrl("jdbc:postgresql://db:5432/address_db"); //for docker-compose
         dataSource.setUsername("postgres");
         dataSource.setPassword("admin");
         return dataSource;

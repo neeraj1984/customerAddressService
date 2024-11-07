@@ -11,8 +11,8 @@
 
 	<groupId>com.microservice.customer.address</groupId>
 	<artifactId>customerAddressService</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>8</java.version>
